@@ -17,14 +17,46 @@ class chatbook:
                            5. Press any other key to exit
                            -> """)
         if user_input == "1":
-            pass
+            self.signup()
         if user_input == "2":
-            pass
+            self.login()
         if user_input == "3":
             pass
         if user_input == "4":
             pass
         if user_input == "4":
             exit()
+
+    def signup(self):
+        email = input("Enter your email as username:-> ")
+        if(email==" "):
+            print("username cannot be empty!")
+            email = input("Enter your email as username:-> ")
+            self.username = email
+        pwd = input("Enter the password:-> ")
+        if(pwd==" " or len(pwd)<8 ):
+            print("Password cannot be empty and should be min 8 char! ")
+            pwd = input("Enter the password:-> ")
+            self.password = pwd
+        self.username = email
+        self.password = pwd
+        print("You are Signed up successfully!")
+        self.main_menu()
+    def login(self):
+        if (self.username == '' and self.password == ''):
+            print("SignUp first by pressing 1 key in main menu!")
+            self.main_menu()
+        else:
+            uname = input("Enter the username:-> ")
+            pwd = input("Enter the password:-> ")
+            if self.username == uname and self.password == pwd:
+                print("You have successfully logged in! ")
+                self.loggedin = True
+            else:
+                print("Input Valid credentials! ")
+        self.main_menu()
+            
+
+
 
 project = chatbook()
