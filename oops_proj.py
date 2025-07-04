@@ -21,10 +21,11 @@ class chatbook:
         if user_input == "2":
             self.login()
         if user_input == "3":
-            pass
+            self.my_post()
         if user_input == "4":
-            pass
-        if user_input == "4":
+            self.snd_msg()
+        if user_input not in ["1","2","3","4"]:
+            print("You have been successfully exited")
             exit()
 
     def signup(self):
@@ -55,8 +56,25 @@ class chatbook:
             else:
                 print("Input Valid credentials! ")
         self.main_menu()
-            
+    
+    def my_post(self):
+        if self.loggedin:
+            txt = input("Enter your text here:-> ")
+            print("Your content has been posted.")
+        else:
+            print("You need to signin first to post something!")
+        self.main_menu()
+    
+    def snd_msg(self):
+        if self.loggedin:
+            txt = input("Enter your message here:-> ")
+            frnd = input("Enter whom to msg:-> ")
+            print(f"The message has been sent to {frnd}")
+        else:
+            print("You need to signin first to send message to anyone!!")
+        self.main_menu()
 
 
 
-project = chatbook()
+
+# project = chatbook()
