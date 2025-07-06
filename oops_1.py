@@ -2,6 +2,7 @@ class employee:
     # special methods/ magic methods / dunder methods
     def __init__(self):
         print("Constructor initiated")
+        print(id(self))
         self.id = 123
         self.dept = "XYZ"
         self.salary = 50000
@@ -14,6 +15,6 @@ class employee:
     def print_some(self):
             return "Welcome coder!!!"
 sam = employee()
-print(sam.print_some())
+print(id(sam))
 # print(sam.salary)
 # sam.travel("Kerala")
